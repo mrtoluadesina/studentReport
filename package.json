@@ -4,7 +4,7 @@
   "description": "A mini project to create a document on prototype oriented programming",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "test"
   },
   "keywords": [
     "oop",
