@@ -1,0 +1,28 @@
+{
+  "name": "studentreport",
+  "version": "1.0.0",
+  "description": "A mini project to create a document on prototype oriented programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "oop",
+    "pop",
+    "test",
+    "jest",
+    "javascript",
+    "prototype",
+    "prototypical inheritance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrtoluadesina/studentReport.git"
+  },
+  "author": "Tolu Adesina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrtoluadesina/studentReport/issues"
+  },
+  "homepage": "https://github.com/mrtoluadesina/studentReport#readme"
+}
