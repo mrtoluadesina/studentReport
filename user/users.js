@@ -5,6 +5,7 @@ function User(name, email, password) {
   this.email = email;
   this.password = password;
   this.id = db.users.length > 0 ? db.users[db.users.length - 1].id + 1 : 1; 
+  db.users.push(this);
 }
 
 module.exports = User;
