@@ -1,4 +1,4 @@
-var db = require('./../db');
+var db = require('../db');
 var User = require('./users');
 
 test('Checking for instance of User', function() {
