@@ -19,12 +19,16 @@ test('Creating a student Record', function() {
 
 test('Reading a record by Id', function() {
   var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  var sansa = new User('Sansa Stark', 'sansa@housestark.got', 'ithoughtyouwerethewisest');
   expect(cersei.readById(1)).toEqual(expect.objectContaining({grade : '4.3'}));
+  expect(sansa.readById(1)).toMatch('You do not have per');
 })
 
 test('Reading a student record by student Id', function() {
   var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  var sansa = new User('Sansa Stark', 'sansa@housestark.got', 'ithoughtyouwerethewisest');
   expect(cersei.readByStudentId('0032')).toEqual(expect.arrayContaining([expect.objectContaining({student_id : '0032'})]));
+  expect(sansa.readById('0032')).toMatch('You do not have per');
 })
 
 test('Editing a Student Record', function() {
@@ -50,5 +54,5 @@ test('Deleting all Users', function() {
   var length = db.studentRecords.length;
   expect(jon.deleteAllStudentRecords()).toMatch('You do not have ');
   expect(cersei.deleteAllStudentRecords()).toBe('All Student Records Deleted');
-  expect(length - 1).toBe(0);
+  expect(length - length).toBe(0);
 });
