@@ -24,13 +24,19 @@ User.prototype.createRecord = function(grade, remark, student_id) {
 User.prototype.readById = function(id) {
   if (this.userType !== 'student') {
     return studentRecord.prototype.getById(id);
-  }
+  } return 'You do not have permission to do this'
 }
 
 User.prototype.readByStudentId = function(student_id) {
   if(this.userType !== 'student') {
     return studentRecord.prototype.getByStudentId(student_id);
-  }
+  } return 'You do not have permission to do this'
+}
+
+User.prototype.updateStudentRecord = function(id, grade, remark) {
+  if(this.userType !== 'student' && this.userType !== 'parent') {
+    return studentRecord.prototype.editRecord(id, grade, remark);
+  } return 'You do not have permission to do this'
 }
 
 module.exports = User;
