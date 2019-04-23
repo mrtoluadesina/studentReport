@@ -16,3 +16,8 @@ test('Creating a student Record', function() {
   expect(jon.createRecord('4.3', 'Very brilliant chap', '0032')).toBe('Student Record Successfully added');
   expect(arya.createRecord('3.0', 'Decent Attempt', '0012')).toBe('You do not have permission to do this');
 });
+
+test('Reading a record by Id', function() {
+  var ceisei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  expect(ceisei.readById(1)).toEqual(expect.objectContaining({grade : '4.3'}));
+})
