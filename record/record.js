@@ -42,4 +42,9 @@ StudentRecord.prototype.removeById = function(id) {
   return 'Student Record Deleted';
 }
 
+StudentRecord.prototype.removeAll = function() {
+  db.studentRecords.length = 0;
+  return 'All Student Records Deleted';
+}
+
 module.exports = StudentRecord;

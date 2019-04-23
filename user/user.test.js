@@ -42,4 +42,13 @@ test('Deleting a student Record', function() {
   expect(cersei.deletedAStudentRecord(2)).toBe('Student Record Deleted');
   expect(jon.deletedAStudentRecord(1)).toMatch('You do not have ');
   console.log(db.studentRecords);
-})
+});
+
+test('Deleting all Users', function() {
+  var jon = new User('Jon Snow', 'jonsnow@housestark.got', 'iknownothing', 'teacher');
+  var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  var length = db.studentRecords.length;
+  expect(jon.deleteAllStudentRecords()).toMatch('You do not have ');
+  expect(cersei.deleteAllStudentRecords()).toBe('All Student Records Deleted');
+  expect(length - 1).toBe(0);
+});
