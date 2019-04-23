@@ -36,4 +36,10 @@ StudentRecord.prototype.editRecord = function(id, grade, remark) {
   return 'Student Record Updated';
 }
 
+StudentRecord.prototype.removeById = function(id) {
+  var recordtoDeleteFrom = StudentRecord.prototype.getById(id);
+  db.studentRecords.splice(db.studentRecords.indexOf(recordtoDeleteFrom), 1);
+  return 'Student Record Deleted';
+}
+
 module.exports = StudentRecord;
