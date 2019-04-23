@@ -21,4 +21,10 @@ User.prototype.createRecord = function(grade, remark, student_id) {
   } return 'You do not have permission to do this';
 }
 
+User.prototype.readById = function(id) {
+  if (this.userType !== 'student') {
+    return studentRecord.prototype.getById(id);
+  }
+}
+
 module.exports = User;
