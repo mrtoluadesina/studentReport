@@ -45,4 +45,10 @@ User.prototype.deletedAStudentRecord = function(id) {
   } return 'You do not have permission to do this';
 }
 
+User.prototype.deleteAllStudentRecords = function() {
+  if (this.userType === 'admin') {
+    return studentRecord.prototype.removeAll();
+  } return 'You do not have permission to do this';
+}
+
 module.exports = User;
