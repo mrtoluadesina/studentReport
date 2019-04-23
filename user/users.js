@@ -27,4 +27,10 @@ User.prototype.readById = function(id) {
   }
 }
 
+User.prototype.readByStudentId = function(student_id) {
+  if(this.userType !== 'student') {
+    return studentRecord.prototype.getByStudentId(student_id);
+  }
+}
+
 module.exports = User;
