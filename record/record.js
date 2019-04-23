@@ -29,4 +29,11 @@ StudentRecord.prototype.getByStudentId = function(student_id) {
   return records;
 }
 
+StudentRecord.prototype.editRecord = function(id, grade, remark) {
+  var recordToUpdate = StudentRecord.prototype.getById(id);
+  recordToUpdate.grade = grade;
+  recordToUpdate.remark = remark;
+  return 'Student Record Updated';
+}
+
 module.exports = StudentRecord;
