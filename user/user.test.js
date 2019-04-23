@@ -33,3 +33,13 @@ test('Editing a Student Record', function() {
   expect(jon.updateStudentRecord(1, '4.5', 'This young chap keeps breaking his own records')).toMatch('Student Record');
   expect(petyr.updateStudentRecord(1, '4.34', 'Nothing lasts, so keep working hard')).toBe('You do not have permission to do this');
 });
+
+test('Deleting a student Record', function() {
+  var jon = new User('Jon Snow', 'jonsnow@housestark.got', 'iknownothing', 'teacher');
+  var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  expect(cersei.createRecord('4.25', 'His head is really on his neckkk', '0117')).toBe('Student Record Successfully added');
+  console.log(db.studentRecords);
+  expect(cersei.deletedAStudentRecord(2)).toBe('Student Record Deleted');
+  expect(jon.deletedAStudentRecord(1)).toMatch('You do not have ');
+  console.log(db.studentRecords);
+})
