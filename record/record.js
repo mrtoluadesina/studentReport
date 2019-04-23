@@ -19,4 +19,14 @@ StudentRecord.prototype.getById = function(id) {
   }
 }
 
+StudentRecord.prototype.getByStudentId = function(student_id) {
+  var records = []
+  for (var i = 0; i < db.studentRecords.length; i++) {
+    if (db.studentRecords[i].student_id === student_id) {
+      records.push(db.studentRecords[i]);
+    }
+  }
+  return records;
+}
+
 module.exports = StudentRecord;
