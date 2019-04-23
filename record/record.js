@@ -11,4 +11,12 @@ StudentRecord.prototype.newRecord = function() {
   return new StudentRecord;
 }
 
+StudentRecord.prototype.getById = function(id) {
+  for(var i = 0; i < db.studentRecords.length; i++) {
+    if (db.studentRecords[i].id === id) {
+      return db.studentRecords[i];
+    }
+  }
+}
+
 module.exports = StudentRecord;
