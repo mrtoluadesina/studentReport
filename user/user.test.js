@@ -48,7 +48,7 @@ test('Deleting a student Record', function() {
   console.log(db.studentRecords);
 });
 
-test('Deleting all Users', function() {
+test('Deleting all Student Records', function() {
   var jon = new User('Jon Snow', 'jonsnow@housestark.got', 'iknownothing', 'teacher');
   var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
   var length = db.studentRecords.length;
