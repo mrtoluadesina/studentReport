@@ -18,6 +18,11 @@ test('Creating a student Record', function() {
 });
 
 test('Reading a record by Id', function() {
-  var ceisei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
-  expect(ceisei.readById(1)).toEqual(expect.objectContaining({grade : '4.3'}));
+  var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  expect(cersei.readById(1)).toEqual(expect.objectContaining({grade : '4.3'}));
+})
+
+test('Reading a student record by student Id', function() {
+  var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  expect(cersei.readByStudentId('0032')).toEqual(expect.arrayContaining([expect.objectContaining({student_id : '0032'})]));
 })
