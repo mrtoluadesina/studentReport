@@ -13,7 +13,7 @@ function User(name, email, password, userType) {
 User.prototype = {
   constructor: User,
   createRecord: function(grade, remark, student_id) {
-    if (this.userType !== 'student') {
+    if (this.userType !== 'student' && this.userType !== 'parent') {
       var addRecord = studentRecord.prototype.newRecord()
       addRecord.grade = grade;
       addRecord.remark = remark;
