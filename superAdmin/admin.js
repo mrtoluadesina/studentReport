@@ -1,5 +1,6 @@
 var db = require('../db');
 var User = require('../user/users');
+var extend = require('../extend');
 
 function Admin(name, email, password){
   User.call(this, name, email, password);
@@ -13,10 +14,19 @@ Admin.prototype = {
   readUserByType: function(type) {
     var usersFound = [];
     for (var i = 0; i < db.users.length; i++) {
-      if (db.users[i].type === type) {
+      if (db.users[i].userType === type) {
         usersFound.push(db.users[i]);
       }
     }
     return usersFound;
+  },
+  getUserById: function(id) {
+    for (var i = 0; i < db.users.length; i++) {
+      if (db.users[i].id === id) {
+        return db.users[i];
+      }
+    }
   }
 }
+
+module.exports = Admin
