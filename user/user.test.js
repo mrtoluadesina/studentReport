@@ -1,6 +1,6 @@
 var db = require('../db');
 var User = require('./users');
-var Record = require('../record/record');
+var Parent = require('./parent');
 
 test('Checking for instance of User', function() {
   var length = db.users.length;
@@ -26,9 +26,12 @@ test('Reading a record by Id', function() {
 
 test('Reading a student record by student Id', function() {
   var cersei = new User('Cersei Lannister', 'ceisei@houselannister.got', 'neckkk', 'admin');
+  var daenerys = new Parent('Daenerys Targaryen', 'daenerys@housetargaryen.got', 'motherofdragons', 'parent');
   var sansa = new User('Sansa Stark', 'sansa@housestark.got', 'ithoughtyouwerethewisest');
   expect(cersei.readByStudentId('0032')).toEqual(expect.arrayContaining([expect.objectContaining({student_id : '0032'})]));
-  expect(sansa.readById('0032')).toMatch('You do not have per');
+  expect(cersei.readByStudentId('0132')).toEqual(expect.arrayContaining([]));
+  expect(daenerys.seeChildRecord('0032')).toEqual(expect.arrayContaining([expect.objectContaining({student_id : '0032'})]));
+  expect(sansa.readByStudentId('0032')).toMatch('You do not have per');
 })
 
 test('Editing a Student Record', function() {
